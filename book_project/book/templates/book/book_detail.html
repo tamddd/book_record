@@ -1,0 +1,5 @@
+{{ object.title }}
+{{ object.author }}
+<a href= "{% url 'list_book' %}">一覧へ</a>
+<a href= "{% url 'delete_book' object.pk %}">削除する</a>
+<a href= "{% url 'update_book' object.pk %}">編集する</a>

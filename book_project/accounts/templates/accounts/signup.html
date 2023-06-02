@@ -1,0 +1,13 @@
+<title>アカウント作成</title>
+
+<form method="POST"> {% csrf_token %}
+    <div>
+    <input type="text" name='username' placeholder="ユーザID">
+    <input type="password" name='password' placeholder="パスワード">
+    <input type="password" name='password' placeholder="パスワード確認用">
+    {% if form.errors %}
+    <span>利用できないユーザIDやパスワードの可能性があります</span>
+    {% endif %}
+    <button type="submit" class="btn">アカウント作成</button>
+    </div>
+</form>

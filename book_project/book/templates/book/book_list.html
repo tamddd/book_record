@@ -1,0 +1,14 @@
+{% for item in object_list %}
+<ul>
+    <li>タイトル: {{ item.title }}</li>
+    <li>カテゴリ: {{ item.category }}</li>
+    <li>評価: {{ item.evaluation }}</li>
+    <a href= "{% url 'detail_book' item.pk %}">詳細へ</a>
+</ul>
+{% endfor %}
+
+{% if request.user.is_authenticated %}
+<a href="{% url 'accouts.logout' %}">ログアウト</a>
+{% else %}
+<a href="{% url 'accounts.login' %}">ログイン</a>
+{% endif %}
